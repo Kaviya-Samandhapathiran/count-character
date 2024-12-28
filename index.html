@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        body {
+            background: rgb(0, 6, 36);
+            background: linear-gradient(68deg, rgba(0, 6, 36, 0.7931547619047619) 0%, rgba(121, 9, 77, 0.8155637254901961) 35%, rgba(0, 212, 255, 1) 100%);
+            text-align: center;
+            background-attachment: fixed;
+            margin-top: 150px;
+        }
+    </style>
+    <h1>Count of Characters</h1>
+    <textarea id="textarea" placeholder="Type your message" maxlength="150" rows="15" cols="50"></textarea>
+    <span id="count"></span>
+</body>
+
+</html>
+
+<script>
+    var textarea = document.getElementById("textarea")
+    var length = textarea.getAttribute("maxlength")
+    var count = document.getElementById("count")
+    count.innerHTML = length
+
+    textarea.onkeyup = function () {
+        document.getElementById('count').innerHTML = (length - this.value.length) + "/" + length
+    }
+</script>
